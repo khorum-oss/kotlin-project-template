@@ -14,12 +14,12 @@ plugins {
 
 group = "org.khorum.oss.konstellation"
 
-extra["dslVersion"] = file("VERSION").readText().trim()
-extra["metaDslVersion"] = libs.versions.meta.dsl.get()
+extra["dslVersion"] = libs.versions.konstellation.dsl.get()
+extra["metaDslVersion"] = libs.versions.konstellation.meta.dsl.get()
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
@@ -75,7 +75,7 @@ tasks.register("koverMergedReport") {
 
 sonar {
     properties {
-        property("sonar.projectKey", "khorum-oss_konstellation-dsl")
+        property("sonar.projectKey", "khorum-oss_<change_me>")
         property("sonar.organization", "khorum-oss")
         property("sonar.host.url", "https://sonarcloud.io")
         property(
